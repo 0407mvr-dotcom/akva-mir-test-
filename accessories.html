@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Аква Мир — Доп. Продукция</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+<body class="catalog-page"> 
+
+    <!-- ===== МОБИЛЬНАЯ ВЕРСИЯ МЕНЮ ===== -->
+    <div class="mobile-header">
+        <div class="mobile-header__wrapper">
+            <div class="burger" id="burger">
+                <img src="images/burger.svg" alt="Меню">
+            </div>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="images/logo.svg" alt="Логотип"></a>
+            </div>
+            <div class="mobile-icons">
+                <a href="tel:84832773773" class="mobile-icon">
+                    <img src="images/phone.svg" alt="Телефон">
+                </a>
+                <a href="javascript:void(0)" class="mobile-icon" id="searchToggle">
+                    <img src="images/search.svg" alt="Поиск">
+                </a>
+                <a href="javascript:void(0)" class="mobile-icon" onclick="openModal('loginModal')">
+                    <img src="images/user.svg" alt="Войти">
+                </a>
+            </div>
+        </div>
+
+        <!-- МОБИЛЬНЫЙ ПОИСК -->
+        <div class="mobile-search" id="mobileSearch">
+            <div class="mobile-search__wrapper">
+                <input type="text" id="mobileSearchInput" placeholder="Поиск товаров..." autofocus>
+                <button class="mobile-search__close" id="mobileSearchClose">✕</button>
+            </div>
+            <div class="mobile-search__results" id="mobileSearchResults"></div>
+        </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__list">
+        <li><a href="index.html">Главная</a></li>
+        <li class="has-submenu">
+            <div class="mobile-menu__item-wrapper">
+                <a href="about.html" class="mobile-menu__link">О компании</a>
+                <span class="mobile-menu__arrow">▼</span>
+            </div>
+            <ul class="submenu">
+                <li><a href="vacancies.html">Вакансии</a></li>
+                <li><a href="production.html">Производство</a></li>
+                <li><a href="https://yandex.ru/maps/org/akva_mir_ofis/1049687057/reviews/?ll=34.496591%2C53.246881&z=17" target="_blank">Отзывы</a></li>
+                <li><a href="cooperation.html">Сотрудничество</a></li>
+            </ul>
+        </li>
+        <li><a href="promo.html">Акции</a></li>
+        <li class="has-submenu">
+            <div class="mobile-menu__item-wrapper">
+                <a href="catalog.html" class="mobile-menu__link">Каталог</a>
+                <span class="mobile-menu__arrow">▼</span>
+            </div>
+            <ul class="submenu">
+                <li><a href="water.html">Вода</a></li>
+                <li><a href="equipment.html">Оборудование</a></li>
+                <li><a href="accessories.html">Доп. Продукция</a></li>
+                <li><a href="gift-cards.html">Подарочные карты</a></li>
+            </ul>
+        </li>
+        <li><a href="pickup.html">Самовывоз</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="tel:84832773773" class="mobile-phone">8 (4832) 773-773</a></li>
+        <li><a href="javascript:void(0)" class="mobile-order-call" onclick="openModal('callModal')">Заказать звонок</a></li>
+    </ul>
+</div>
+    </div>
+
+    <!-- ===== ДЕСКТОПНАЯ ВЕРСИЯ МЕНЮ ===== -->
+    <header class="header desktop-header">
+        <div class="header__container">
+            <div class="header__menu-wrapper">
+                <div class="header__top">
+                    <ul class="header__nav-links">
+                        <li><a href="app.html">Мобильное приложение</a></li>
+                        <li class="has-arrow has-dropdown">
+                            <a href="about.html">О компании</a>
+                            <div class="dropdown dropdown-company">
+                                <a href="vacancies.html" class="dropdown__item">Вакансии</a>
+                                <a href="production.html" class="dropdown__item">Производство</a>
+                                <a href="https://yandex.ru/maps/org/akva_mir_ofis/1049687057/reviews/?ll=34.496591%2C53.246881&z=17" class="dropdown__item" target="_blank">Отзывы</a>
+                                <a href="cooperation.html" class="dropdown__item">Сотрудничество</a>
+                            </div>
+                        </li>
+                        <li><a href="promo.html">Акции</a></li>
+                        <li class="has-arrow has-dropdown">
+                            <a href="catalog.html">Каталог</a>
+                            <div class="dropdown dropdown-catalog">
+                                <a href="water.html" class="dropdown__item">Вода</a>
+                                <a href="equipment.html" class="dropdown__item">Оборудование</a>
+                                <a href="accessories.html" class="dropdown__item">Доп. Продукция</a>
+                                <a href="gift-cards.html" class="dropdown__item">Подарочные карты</a>
+                            </div>
+                        </li>
+                        <li><a href="pickup.html">Самовывоз</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                    <div class="header__contacts">
+                        <a href="tel:84832773773" class="header__phone">8 (4832) 773-773</a>
+                        <a href="javascript:void(0)" class="header__order-call" onclick="openModal('callModal')">Заказать звонок</a>
+                    </div>
+                </div>
+
+                <div class="header__bottom">
+                    <div class="header__logo">
+                        <a href="index.html"><img src="images/logo.svg" alt="Логотип"></a>
+                    </div>
+                    <button class="header__catalog" onclick="location.href='catalog.html'">
+                        <img src="images/list 1.svg" alt="">
+                        Каталог
+                    </button>
+                    
+                    <div class="header__search">
+                        <input type="text" id="desktopSearchInput" placeholder="Найти" autocomplete="off">
+                        <button class="header__search-btn" id="desktopSearchBtn">
+                            <img src="images/search.svg" alt="Поиск">
+                        </button>
+                        <div class="search-dropdown" id="searchDropdown">
+                            <div class="search-dropdown__list" id="searchResults"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="header__worktime">
+                        <span>Офис работает:</span>
+                        <span>Пн - пт: 9:00 - 18:30</span>
+                        <span>Сб: 9:00 - 16:00</span>
+                    </div>
+                    <div class="header__icons">
+                        <a href="javascript:void(0)" class="header__icon" onclick="openModal('loginModal')">
+                            <img src="images/user 2.svg" alt="Войти">
+                            <span>Войти</span>
+                        </a>
+                        <a href="cart.html" class="header__icon" style="position:relative;">
+                            <img src="images/cart.svg" alt="Корзина">
+                            <span>Корзина</span>
+                            <span class="cart-counter" style="display:none; position:absolute; top:-8px; right:-12px; background:#ff0000; color:white; font-size:10px; font-weight:700; width:18px; height:18px; border-radius:50%; display:none; align-items:center; justify-content:center; font-family:'Inter',sans-serif;">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-container-global">
+
+        <!-- 1. ХЛЕБНЫЕ КРОШКИ -->
+        <div class="page-breadcrumbs" id="breadcrumbs"></div>
+
+        <!-- 2. ЗАГОЛОВОК -->
+        <div class="page-header">
+            <h1 class="page-title">Доп. Продукция</h1>
+        </div>
+
+        <!-- 3. ДВЕ КОЛОНКИ (ЛЕВАЯ + ПРАВАЯ) -->
+        <div class="page-wrapper">
+            <div class="page-container">
+                <!-- ЛЕВАЯ КОЛОНКА -->
+                <aside class="page-sidebar page-sidebar-1">
+                    <div class="about-links">
+                        <a href="water.html">Вода</a>
+                        <a href="equipment.html">Оборудование</a>
+                        <span class="active-link">Доп. Продукция</span>
+                        <a href="gift-cards.html">Подарочные карты</a>
+                    </div>
+                    <div class="about-cards">
+                        <a href="promo.html" class="about-card-link">
+                            <img src="images/ma1.png" alt="Картинка 1" class="about-card-img">
+                        </a>
+                        <a href="promo.html" class="about-card-link">
+                            <img src="images/ma2.png" alt="Картинка 2" class="about-card-img">
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- ПРАВАЯ КОЛОНКА — КАТАЛОГ -->
+                <main class="page-content">
+                    
+                    <!-- МОБИЛЬНАЯ КНОПКА ФИЛЬТРОВ -->
+                    <div class="mobile-filter-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M2 5H18M5 10H15M8 15H12" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Фильтры</span>
+                    </div>
+
+                    <!-- ФИЛЬТРЫ (НАД КАТАЛОГОМ) -->
+                    <div class="catalog-filters">
+                        <div class="filters-row">
+                            <!-- Оставляем только "Хит продаж" -->
+                            <button class="filter-btn filter-btn--hit">Хит продаж</button>
+                        </div>
+                        
+                        <div class="filters-row">
+                            <div class="filter-dropdown">
+                                <button class="filter-btn filter-btn--dropdown">
+                                    Популярные
+                                    <span class="filter-arrow"></span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <label><input type="checkbox"> Дешевле</label>
+                                    <label><input type="checkbox"> Дороже</label>
+                                    <label><input type="checkbox"> Товары со скидкой</label>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-dropdown">
+                                <button class="filter-btn filter-btn--dropdown">
+                                    Цена
+                                    <span class="filter-arrow"></span>
+                                </button>
+                                <div class="dropdown-menu price-dropdown">
+                                    <div class="price-inputs">
+                                        <input type="number" placeholder="от" class="price-min">
+                                        <span>—</span>
+                                        <input type="number" placeholder="до" class="price-max">
+                                    </div>
+                                    <button class="price-apply">Применить</button>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-sort">
+                                <button class="sort-btn sort-price">
+                                    Цена <span class="sort-arrow up">↑</span><span class="sort-arrow down">↓</span>
+                                </button>
+                                <button class="sort-btn sort-name">
+                                    Наименование товара <span class="sort-arrow up">↑</span><span class="sort-arrow down">↓</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- СЧЕТЧИК НАЙДЕННЫХ ТОВАРОВ -->
+                    <div class="filter-results-count">
+                        Найдено товаров: <span class="filter-count" id="filterCount">0</span>
+                    </div>
+
+                    <!-- СЕТКИ ТОВАРОВ -->
+                    <div class="catalog-products-grid" id="accessoryProductsGrid"></div>
+
+                </main>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ ФИЛЬТРОВ -->
+    <div class="mobile-filters-overlay" id="mobileFiltersOverlay">
+        <div class="mobile-filters-panel" id="mobileFiltersPanel">
+            <div class="mobile-filters-header">
+                <h3>Фильтры</h3>
+                <button class="mobile-filters-close" id="closeFiltersBtn">✕</button>
+            </div>
+            
+            <div class="mobile-filters-content">
+                <div class="mobile-filter-section">
+                    <div class="mobile-filter-title">Быстрые фильтры</div>
+                    <button class="mobile-filter-btn-filter" data-filter="hit">Хит продаж</button>
+                </div>
+                
+                <div class="mobile-filter-section">
+                    <div class="mobile-filter-title">Популярные</div>
+                    <label><input type="checkbox"> Дешевле</label>
+                    <label><input type="checkbox"> Дороже</label>
+                    <label><input type="checkbox"> Товары со скидкой</label>
+                </div>
+                
+                <div class="mobile-filter-section">
+                    <div class="mobile-filter-title">Цена</div>
+                    <div class="mobile-price-inputs">
+                        <input type="number" placeholder="от" class="mobile-price-min">
+                        <span>—</span>
+                        <input type="number" placeholder="до" class="mobile-price-max">
+                    </div>
+                    <button class="mobile-price-apply">Применить</button>
+                </div>
+                
+                <div class="mobile-filter-section">
+                    <div class="mobile-filter-title">Сортировка</div>
+                    <button class="mobile-sort-btn sort-price-mobile">По цене</button>
+                    <button class="mobile-sort-btn sort-name-mobile">По наименованию</button>
+                </div>
+            </div>
+            
+            <div class="mobile-filters-footer">
+                <button class="mobile-filters-reset">Сбросить все</button>
+                <button class="mobile-filters-apply">Применить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <a href="about.html" class="footer__title footer__title--bold">О компании</a>
+                <ul class="footer__links">
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="about.html#reviews">Отзывы</a></li>
+                    <li><a href="production.html">Производство</a></li>
+                    <li><a href="water.html">Наша вода</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="cooperation.html">Сотрудничество</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <a href="contacts.html" class="footer__title">Контакты</a>
+                <ul class="footer__links">
+                    <li><a href="pickup.html">Самовывоз</a></li>
+                    <li><a href="promo.html">Акции</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <a href="catalog.html" class="footer__title">Каталог</a>
+                <ul class="footer__links">
+                    <li><a href="water.html">Вода</a></li>
+                    <li><a href="gift-cards.html">Подарочные карты</a></li>
+                    <li><a href="accessories.html">Доп. Продукция</a></li>
+                    <li><a href="equipment.html">Оборудование</a></li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--contacts">
+                <div class="footer__contacts">
+                    <span class="footer__contacts-title">Контакты</span>
+                    <a href="tel:84832773773" class="footer__phone">8 (4832) 773-773</a>
+                    <a href="mailto:office@akwa-mir.ru" class="footer__email">office@akwa-mir.ru</a>
+                    <p class="footer__address">г. Брянск, р.п. Б. Полпино,<br>пер. Октябрьский, д. 2В</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__accordion-wrapper">
+            <div class="footer__accordion">
+                <div class="footer__accordion-header">
+                    <span class="footer__accordion-title">О компании</span>
+                    <span class="footer__accordion-arrow"></span>
+                </div>
+                <ul class="footer__accordion-body">
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="about.html#reviews">Отзывы</a></li>
+                    <li><a href="production.html">Производство</a></li>
+                    <li><a href="water.html">Наша вода</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="cooperation.html">Сотрудничество</a></li>
+                </ul>
+            </div>
+            <div class="footer__accordion">
+                <div class="footer__accordion-header">
+                    <span class="footer__accordion-title">Каталог</span>
+                    <span class="footer__accordion-arrow"></span>
+                </div>
+                <ul class="footer__accordion-body">
+                    <li><a href="water.html">Вода</a></li>
+                    <li><a href="gift-cards.html">Подарочные карты</a></li>
+                    <li><a href="accessories.html">Доп. Продукция</a></li>
+                    <li><a href="equipment.html">Оборудование</a></li>
+                </ul>
+            </div>
+            <div class="footer__accordion">
+                <div class="footer__accordion-header">
+                    <span class="footer__accordion-title">Контакты</span>
+                    <span class="footer__accordion-arrow"></span>
+                </div>
+                <div class="footer__accordion-body">
+                    <a href="tel:84832773773">8 (4832) 773-773</a>
+                    <a href="mailto:office@akwa-mir.ru">office@akwa-mir.ru</a>
+                    <p>г. Брянск, р.п. Б. Полпино,<br>пер. Октябрьский, д. 2В</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__socials">
+            <p class="footer__socials-title">Мы в соцсетях</p>
+            <div class="footer__socials-icons">
+                <a href="#"><img src="images/vk.png" alt="VK"></a>
+                <a href="#"><img src="images/inst.png" alt="Instagram"></a>
+                <a href="#"><img src="images/tg.png" alt="Telegram"></a>
+                <a href="#"><img src="images/wa.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+
+        <div class="footer__divider"></div>
+
+        <div class="footer__bottom">
+            <div class="footer__bottom-container">
+                <div class="footer__apps">
+                    <a href="#"><img src="images/googleplay.png" alt="Google Play"></a>
+                    <a href="#"><img src="images/appstore.png" alt="App Store"></a>
+                    <a href="#"><img src="images/appgallery.png" alt="App Gallery"></a>
+                    <a href="#"><img src="images/rustore.png" alt="RuStore"></a>
+                </div>
+                <img src="images/pay footer.png" alt="Способы оплаты" class="footer__payments">
+                <p class="footer__copyright">© 2026 Аква-мир</p>
+                <div class="footer__legal">
+                    <a href="oferta.html">Оферта</a>
+                    <a href="privacy.html">Конфиденциальность</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== НИЖНЕЕ ЗАКРЕПЛЁННОЕ МЕНЮ (МОБИЛЬНАЯ ВЕРСИЯ) ===== -->
+    <div class="bottom-menu">
+        <div class="bottom-menu__wrapper">
+            <a href="index.html" class="bottom-menu__item">
+                <img src="images/house.svg" alt="Главная" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Главная</span>
+            </a>
+            <a href="catalog.html" class="bottom-menu__item">
+                <img src="images/list 2.svg" alt="Каталог" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Каталог</span>
+            </a>
+            <a href="cart.html" class="bottom-menu__item">
+                <img src="images/cart.svg" alt="Корзина" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Корзина</span>
+                <span class="cart-counter" id="bottomCartCounter">0</span>
+            </a>
+            <a href="javascript:void(0)" class="bottom-menu__item" onclick="openModal('loginModal')">
+                <img src="images/user 2.svg" alt="Войти" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Войти</span>
+            </a>
+            <a href="contacts.html" class="bottom-menu__item">
+                <img src="images/map 1.svg" alt="Контакты" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Контакты</span>
+            </a>
+            <a href="app.html" class="bottom-menu__item">
+                <img src="images/smartphone 1.svg" alt="Приложение" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Приложение</span>
+            </a>
+            <a href="promo.html" class="bottom-menu__item">
+                <img src="images/zap 1.svg" alt="Акции" class="bottom-menu__icon">
+                <span class="bottom-menu__label">Акции</span>
+            </a>
+        </div>
+    </div>
+
+   <!-- ===== ФОРМА ВХОДА / РЕГИСТРАЦИИ ===== -->
+    <div class="modal" id="loginModal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <a href="index.html"><img src="images/logo.svg" alt="Логотип" class="modal__logo"></a>
+                <span class="modal__close" onclick="closeModal('loginModal')">&times;</span>
+            </div>
+            <h2 class="modal__title">Вход или регистрация</h2>
+            <p class="modal__description">
+                Укажите номер телефона, чтобы войти или зарегистрироваться, если у вас нет аккаунта. 
+                Код может прийти в Telegram или в СМС.
+            </p>
+            <form id="loginForm" onsubmit="sendCode(event)">
+                <div class="form-group">
+                    <input type="tel" id="phoneNumber" placeholder="Номер телефона" required>
+                </div>
+                <button type="submit" class="modal__btn">Выслать код</button>
+            </form>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreePersonal"> 
+                    <span class="checkbox-custom"></span>
+                    Соглашаюсь на обработку персональных данных в соответствии с Политикой конфиденциальности
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreeNews"> 
+                    <span class="checkbox-custom"></span>
+                    Соглашаюсь получать новости и специальные предложения
+                </label>
+            </div>
+            <p class="modal__offer">
+                Нажимая на кнопку «Выслать код», вы принимаете условия <a href="oferta.html">оферты</a>
+            </p>
+            <div class="modal__alternative">
+                <span class="modal__alternative-line"></span>
+                <span class="modal__alternative-text">Войти через</span>
+                <span class="modal__alternative-line"></span>
+            </div>
+            <div class="modal__socials">
+                <a href="#" class="modal__social-link">Почта</a>
+                <a href="#" class="modal__social-link">Социальные сети</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ФОРМА ОБРАТНОЙ СВЯЗИ (ЗАКАЗАТЬ ЗВОНОК) ===== -->
+    <div class="modal" id="callModal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <a href="index.html"><img src="images/logo.svg" alt="Логотип" class="modal__logo"></a>
+                <span class="modal__close" onclick="closeModal('callModal')">&times;</span>
+            </div>
+            
+            <h2 class="modal__title">Заказать звонок</h2>
+            
+            <p class="modal__description">
+                Представьтесь, мы вам перезвоним.
+            </p>
+            
+            <form id="callForm" onsubmit="submitCallForm(event)" novalidate>
+                <div class="form-group">
+                    <input type="text" id="callName" placeholder="Ваше имя" required>
+                    <span class="form-error" id="callNameError">Пожалуйста, введите ваше имя</span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="callPhone" placeholder="+7 (___) ___-__-__" required>
+                    <span class="form-error" id="callPhoneError">Введите корректный номер телефона</span>
+                </div>
+                
+                <button type="submit" class="modal__btn">Отправить</button>
+            </form>
+            
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="callAgreePersonal"> 
+                    <span class="checkbox-custom"></span>
+                    Соглашаюсь на обработку персональных данных в соответствии с Политикой конфиденциальности 
+                </label>
+                <span class="form-error" id="callAgreeError">Подтвердите согласие на обработку данных</span>
+            </div>
+            
+            <div class="modal__success" id="callSuccess" style="display: none;">
+                <div class="modal__success-icon">✓</div>
+                <h3 class="modal__success-title">Заявка отправлена!</h3>
+                <p class="modal__success-text">Мы свяжемся с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== ПОП-АП ПРИ УХОДЕ С САЙТА ===== -->
+<div class="exit-popup" id="exitPopup">
+    <div class="exit-popup__overlay"></div>
+    <div class="exit-popup__content">
+        <button class="exit-popup__close" id="exitPopupClose">✕</button>
+        <div class="exit-popup__image">
+            <img src="images/ac2.png" alt="Специальное предложение">
+        </div>
+        <h2 class="exit-popup__title">Не уходите!</h2>
+        <p class="exit-popup__text">
+            У нас для вас есть специальное предложение!<br>
+            <strong>Скидка 20% на первый заказ</strong>
+        </p>
+        <a href="promo-detail.html" class="exit-popup__btn">Узнать подробнее</a>
+        <p class="exit-popup__note">Нажмите "✕" чтобы закрыть</p>
+    </div>
+</div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
